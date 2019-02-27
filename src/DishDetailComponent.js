@@ -4,8 +4,20 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 class DishDetail extends Component {
   
       renderComments(comments) {
+          const listComments = comments.map((commentIt) =>
+            <li key={commentIt.id}>{commentIt.comment}
+            <ul>
+              <li>{commentIt.author}, {commentIt.date}</li>
+            </ul>
+            </li>
+          );
         return (
-          <h1>Comments</h1>
+          <div>
+            <h4>Comments</h4>
+            <ul class="list-unstyled">
+              {listComments}
+            </ul>
+          </div>
         );
       }    
   
