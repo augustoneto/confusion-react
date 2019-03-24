@@ -14,7 +14,7 @@ class DishDetail extends Component {
         return (
           <div>
             <h4>Comments</h4>
-            <ul class="list-unstyled">
+            <ul className="list-unstyled">
               {listComments}
             </ul>
           </div>
@@ -34,16 +34,17 @@ class DishDetail extends Component {
       }
   
     render() {
-      var selectedDish = this.props.selectedDish;
-      if (selectedDish != null) 
+      var showDish = this.props.dish;
+      
+      if (showDish != null) 
         return (
           <div className="container">
             <div className="row">
               <div className="col-12 col-md-5 m-1">
-                {this.renderDish(selectedDish)}
+                {this.renderDish(showDish)}
               </div>
               <div className="col-12 col-md-5 m-1">
-                {this.renderComments(selectedDish.comments)}
+                {this.renderComments(showDish.comments)}
               </div>
             </div>
           </div>
