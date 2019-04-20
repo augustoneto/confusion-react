@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Home from './HomeComponent';
-import { Navbar, NavbarBrand } from 'reactstrap';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Menu from './MenuComponent';
 import DishDetail from './DishDetailComponent';
 import Contact from './ContactComponent';
+import About from './AboutComponent';
 import { DISHES } from './dishes';
 import { COMMENTS } from './comments';
 import { PROMOTIONS } from './promotions';
@@ -49,6 +49,7 @@ class Main extends Component {
         <Header />
           <Switch>
               <Route path='/home' component={HomePage} />
+              <Route exact path='/aboutus' component={() => <About leaders={this.state.leaders} />} />
               <Route exact path='/menu' component={() => <Menu dishes={this.state.dishes} />} />
               <Route path='/menu/:dishId' component={DishWithId} />
               <Route exact path='/contactus' component={Contact} />} />
